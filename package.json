@@ -1,0 +1,42 @@
+{
+  "name": "note_plus",
+  "version": "1.0.0",
+  "description": "A note management app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node index.js",
+    "lint": "eslint . --ext .js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oyekunle-mark/listening_ears.git"
+  },
+  "keywords": [
+    "note",
+    "note",
+    "management",
+    "crud"
+  ],
+  "author": "oyekunle oloyede",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oyekunle-mark/listening_ears/issues"
+  },
+  "homepage": "https://github.com/oyekunle-mark/listening_ears#readme",
+  "dependencies": {
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.1",
+    "nodemon": "^1.18.11"
+  }
+}
