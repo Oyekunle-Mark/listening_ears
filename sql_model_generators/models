@@ -1,2 +1,0 @@
-sequelize model:create --name User --attributes user_id:integer,name:string,password:string,email:string
-sequelize model:create --name Note --attributes note_id:integer,time:date
