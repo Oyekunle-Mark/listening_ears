@@ -12,6 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api/v1', noteRouter);
 
+const PORT = process.env.PORT || 3000;
+
 app.use((req, res) => {
   res.status(404).json({
     status: 404,
@@ -19,6 +21,6 @@ app.use((req, res) => {
   });
 });
 
-app.listen('3000', () => {
-  devLogger('Note+ started on port 3000');
+app.listen(PORT, () => {
+  devLogger(`Note+ started on port ${PORT}`);
 });
