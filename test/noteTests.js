@@ -5,7 +5,13 @@ import app from '../index';
 import db from '../models/db_store/db';
 
 (() => {
-  db.query('DELETE FROM note;');
+  db.query(`DROP TABLE IF EXISTS note;
+    CREATE TABLE IF NOT EXISTS note(
+    id SERIAL PRIMARY KEY,
+    title TEXT NOT NULL,
+    note TEXT NOT NULL,
+    date_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  );`);
 })();
 
 chai.use(chaiHttp);
