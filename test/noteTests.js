@@ -16,6 +16,7 @@ import db from '../models/db_store/db';
 
 chai.use(chaiHttp);
 
+// eslint-disable-next-line no-unused-vars
 const should = chai.should();
 
 describe('/POST Notes', () => {
