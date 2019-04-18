@@ -1,11 +1,12 @@
 import db from './db_store/db';
+import trim from '../utils/trim';
 
 class NoteController {
   static createNote(req, res) {
     const { title, note } = req.body;
 
     const text = 'INSERT INTO note(title, note) VALUES($1, $2) RETURNING *';
-    const values = [title, note];
+    const values = [trim(title), trim(note)];
 
     db.query(text, values)
       .then(results => res.status(201).json({
@@ -54,7 +55,7 @@ class NoteController {
     const { title, note } = req.body;
 
     const text = 'UPDATE note SET title=$1, note=$2 WHERE id=$3 RETURNING *';
-    const values = [title, note, id];
+    const values = [trim(title), trim(note), id];
 
     db.query(text, values)
       .then(results => res.status(202).json({
