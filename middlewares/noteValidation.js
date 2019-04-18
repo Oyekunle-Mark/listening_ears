@@ -1,7 +1,7 @@
 class NoteValidation {
   static createNoteValidation(req, res, next) {
     if (!req.body.title || !req.body.note || /^\s*$/.test(req.body.title) || /^\s*$/.test(req.body.note)) {
-      res.status(400).json({
+      return res.status(400).json({
         status: 400,
         message: 'Please provide a title and note body'
       });
@@ -12,7 +12,7 @@ class NoteValidation {
 
   static deleteNote(req, res, next) {
     if (!(/^[123456789]+$/.test(req.params.id))) {
-      res.status(400).json({
+      return res.status(400).json({
         status: 400,
         message: 'Request parameter must be an integer'
       });
@@ -23,14 +23,14 @@ class NoteValidation {
 
   static editNoteValidation(req, res, next) {
     if (!req.body.title || !req.body.note || /^\s*$/.test(req.body.title) || /^\s*$/.test(req.body.note)) {
-      res.status(400).json({
+      return res.status(400).json({
         status: 400,
         message: 'Please provide a title and note body'
       });
     }
 
     if (!(/^[123456789]+$/.test(req.params.id))) {
-      res.status(400).json({
+      return res.status(400).json({
         status: 400,
         message: 'Request parameter must be an integer'
       });
