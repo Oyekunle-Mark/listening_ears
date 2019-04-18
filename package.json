@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha --exit --require @babel/register",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "DEBUG=.* nodemon --exec babel-node index.js",
     "lint": "eslint . --ext .js",
     "create-migrations": "DEBUG=.* babel-node migrations/createTables",
@@ -42,6 +43,7 @@
     "@babel/register": "^7.4.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.1",
