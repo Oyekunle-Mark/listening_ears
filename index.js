@@ -24,3 +24,5 @@ app.use((req, res) => {
 app.listen(PORT, () => {
   devLogger(`Note+ started on port ${PORT}`);
 });
+
+export default app;
