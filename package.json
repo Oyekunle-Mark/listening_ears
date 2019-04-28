@@ -6,7 +6,7 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha --exit --require @babel/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "start": "DEBUG=.* nodemon --exec babel-node index.js",
+    "dev-server": "DEBUG=.* nodemon --exec babel-node index.js",
     "lint": "eslint . --ext .js",
     "create-migrations": "DEBUG=.* babel-node migrations/createTables",
     "drop-migrations": "DEBUG=.* babel-node migrations/dropTables",
